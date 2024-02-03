@@ -81,3 +81,10 @@ header .containerCart .containerLength .cantCart{
     left: 80%;
     border-radius: 50%;
 }
+
+.containerSaludo{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    font-size: 30px;
+}

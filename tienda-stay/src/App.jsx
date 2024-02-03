@@ -1,10 +1,19 @@
 import './Style.css';
-import NavBar from './components/header/NavBar';
+import NavBar from "./components/header/NavBar";
+import ItemListContainer from './components/header/ItemListContainer/ItemListContainer';
 
-const App = () =>  {
+function App() {
   return (
-    <NavBar/>
-  )
+
+    <div>
+
+      <NavBar/>
+
+      <ItemListContainer greeting={'¡Bienvenidos!'}/>
+
+    </div>
+    
+  );
 }
 
 export default App;

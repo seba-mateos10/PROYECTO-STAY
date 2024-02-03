@@ -1,13 +1,16 @@
-const ItemListContainer = (props) => {
+const MenuList = (props)=> {
     return(
-        <ul>
+
+        <div>
+           <ul>
             <li>{props.itemUno}</li>
             <li>{props.itemDos}</li>
             <li>{props.itemTres}</li>
             <li>{props.itemCuatro}</li>
-        </ul>
+           </ul>
+        </div>
 
     )
 }
 
-export default ItemListContainer;
+export default MenuList;
