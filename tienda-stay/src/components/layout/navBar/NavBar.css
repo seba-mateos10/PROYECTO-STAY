@@ -1,5 +1,5 @@
 :root {
-  --color-txt-nav: #5b00fb;
+  --color-txt-nav: #000000;
 }
 
 header {
@@ -15,29 +15,31 @@ header .containerBrand {
   height: 100%;
   display: flex;
   justify-content: center;
+  background-color: rgb(197, 197, 197);
 }
 
 header .containerBrand img {
   transform: scale(1.7);
 }
 
-/* containerList */
-header .containerItemList {
+/* containerMenuList */
+header .containerMenuList {
   width: 70%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-color: rgb(197, 197, 197);
 }
 
-header .containerItemList ul {
+header .containerMenuList ul {
   list-style: none;
   display: flex;
   margin: 0;
   justify-content: flex-end;
 }
 
-header .containerItemList ul li {
+header .containerMenuList ul li {
   margin: 10px;
   color: var(--color-txt-nav);
   cursor: pointer;
@@ -51,6 +53,7 @@ header .containerCart {
   justify-content: center;
   align-items: center;
   min-width: 72px;
+  background-color: rgb(197, 197, 197);
 }
 
 header .containerCart .containerLength {

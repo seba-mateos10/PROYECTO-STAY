@@ -4,7 +4,7 @@ const CartWidget = () => {
   return (
     <div className="containerLength">
       <span className="cantCart">10</span>
-      <FaShoppingCart color="#5b00fb" />
+      <FaShoppingCart color="#000000" />
     </div>
   );
 };

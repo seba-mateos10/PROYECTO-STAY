@@ -1,0 +1,32 @@
+.Counter {
+  justify-content: center;
+  align-items: center;
+}
+
+.Controls {
+  justify-content: center;
+  display: flex;
+}
+
+.Button {
+  margin-top: 40px;
+  height: 20%;
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+.ButtonCartContainer {
+  justify-content: center;
+  display: flex;
+}
+
+.ButtonCart {
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+.Number {
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
