@@ -1,6 +1,6 @@
 import Brand from "../brand/Brand";
 import CartWidget from "../../common/cartWidget/CartWidget";
-import MenuList from "../../pages/menuList/MenuList";
+import MenuList from "../menuList/MenuList";
 
 const NavBar = () => {
   return (

@@ -5,6 +5,7 @@ import "./components/pages/itemListContainer/ItemList.css";
 import "./components/layout/navBar/NavBar.css";
 import NavBar from "./components/layout/navBar/NavBar";
 import Counter from "./components/common/counter/Counter";
+import "./components/common/counter/Counter.css";
 
 const App = () => {
   return (
@@ -12,12 +13,6 @@ const App = () => {
       <NavBar />
 
       <ItemListContainer greeting={"¡Bienvenidos!"} />
-
-      <Counter
-        initial={1}
-        stock={10}
-        onAdd={(quantity) => console.log("Cantidad agregada ", quantity)}
-      />
     </>
   );
 };

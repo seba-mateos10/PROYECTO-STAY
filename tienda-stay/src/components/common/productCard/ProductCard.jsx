@@ -1,4 +1,6 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import Counter from "../counter/Counter";
+import "../counter/Counter.css";
 
 export const ProductCard = ({ img, title, description, price }) => {
   return (
@@ -12,6 +14,11 @@ export const ProductCard = ({ img, title, description, price }) => {
           {description}
         </Typography>
         <Typography variant="h6">{price}</Typography>
+        <Counter
+          initial={1}
+          stock={10}
+          onAdd={(quantity) => console.log("Cantidad agregada ", quantity)}
+        />
       </CardContent>
     </Card>
   );
