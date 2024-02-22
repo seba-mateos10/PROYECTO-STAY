@@ -1,0 +1,34 @@
+.detailCard {
+  border: 1px solid;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 15%;
+  display: flex;
+  width: 70%;
+}
+
+.detailImg {
+  height: 400px;
+  width: 470px;
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detailTitle {
+  font-size: 40px;
+  margin: 0;
+}
+
+.detailPrice {
+  font-size: 20px;
+  width: 35%;
+}
+
+.detailDescription {
+  font-size: 20px;
+  width: 90%;
+}

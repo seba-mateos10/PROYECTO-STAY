@@ -1,32 +1,28 @@
 import { useState, useEffect } from "react";
-import { products } from "../../../productsMock";
-import ItemList from "../itemListContainer/ItemList";
+import { getProducts } from "../../../productsMock";
+import { ItemList } from "../../common/ItemList";
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({ greeting }) => {
+export const ItemListContainer = () => {
+  const { category } = useParams();
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const tarea = new Promise((resolve, reject) => {
-      resolve(products);
-      reject("error");
+    setIsLoading(true);
+    getProducts().then((resp) => {
+      if (category) {
+        const productsFilter = resp.filter(
+          (product) => product.category === category
+        );
+        setItems(productsFilter);
+      } else {
+        setItems(resp);
+      }
+
+      setIsLoading(false);
     });
+  }, [category]);
 
-    tarea
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  return (
-    <>
-      <h1 className="containerSaludo">{greeting}</h1>
-
-      <ItemList items={items} />
-    </>
-  );
+  return <>{isLoading ? <h2>Cargando...</h2> : <ItemList items={items} />}</>;
 };
-
-export default ItemListContainer;

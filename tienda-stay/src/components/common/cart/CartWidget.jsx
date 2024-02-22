@@ -1,6 +1,6 @@
 import { FaShoppingCart } from "react-icons/fa";
 
-const CartWidget = () => {
+export const CartWidget = () => {
   return (
     <div className="containerLength">
       <span className="cantCart">10</span>
@@ -8,5 +8,3 @@ const CartWidget = () => {
     </div>
   );
 };
-
-export default CartWidget;

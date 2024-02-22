@@ -1,7 +1,7 @@
 import "./Counter.css";
 import { useState } from "react";
 
-const Counter = ({ stock, initial, onAdd }) => {
+export const Counter = ({ stock, initial, onAdd }) => {
   const [quantity, setQuantity] = useState(initial);
 
   const sumar = () => {
@@ -39,5 +39,3 @@ const Counter = ({ stock, initial, onAdd }) => {
     </div>
   );
 };
-
-export default Counter;
