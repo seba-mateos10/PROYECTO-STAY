@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import brand from "../../../../public/img/brand.svg";
 
 export const Brand = () => {

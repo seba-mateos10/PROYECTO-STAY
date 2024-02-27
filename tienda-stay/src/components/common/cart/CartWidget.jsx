@@ -1,10 +1,11 @@
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const CartWidget = () => {
   return (
-    <div className="containerLength">
+    <Link to="/cart" className="containerLength">
       <span className="cantCart">10</span>
       <FaShoppingCart color="#000000" />
-    </div>
+    </Link>
   );
 };

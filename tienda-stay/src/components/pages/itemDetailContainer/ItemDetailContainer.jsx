@@ -5,6 +5,7 @@ import { getProductById } from "../../../productsMock";
 
 export const ItemDetailContainer = () => {
   const { id } = useParams();
+  // console.log(id);
 
   const [item, setItem] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +15,25 @@ export const ItemDetailContainer = () => {
       setItem(resp);
       setIsLoading(false);
     });
-  }, []);
+  }, [id]);
 
-  return <>{isLoading ? <h2>Cargando...</h2> : <ItemDetail {...item} />}</>;
+  const onAdd = (cantidad) => {
+    let infoProducto = {
+      ...item,
+      quantity: cantidad,
+    };
+    console.log(infoProducto);
+    // Quiero navegar al carrito
+    // navigate("/cart")
+  };
+
+  return (
+    <>
+      {isLoading ? (
+        <h2>Cargando...</h2>
+      ) : (
+        <ItemDetail {...item} onAdd={onAdd} />
+      )}
+    </>
+  );
 };

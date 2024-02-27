@@ -1,4 +1,4 @@
-const products = [
+export let products = [
   {
     id: "1",
     title: "Campera Lewis 3.0 White",
@@ -66,7 +66,7 @@ export const getProducts = () => {
     if (products.length > 0) {
       setTimeout(() => {
         resolve(products);
-      }, 2000);
+      }, 500);
     } else {
       reject("No hay productos");
     }
@@ -84,7 +84,7 @@ export const getProductById = (id) => {
         } else {
           reject(`No se encuentra el producto con el id ${id}`);
         }
-      }, 2000);
+      }, 500);
     } else {
       reject("No hay productos");
     }

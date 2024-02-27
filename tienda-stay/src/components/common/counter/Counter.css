@@ -9,25 +9,13 @@
   display: flex;
 }
 
-.Button {
-  margin-top: 40px;
-  height: 20%;
-  background-color: #5b00fb;
-  border-radius: 5px;
+.Number {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .ButtonCartContainer {
   justify-content: center;
   display: flex;
-}
-
-.ButtonCart {
-  background-color: #5b00fb;
-  border-radius: 10px;
-}
-
-.Number {
-  margin-top: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
 }
