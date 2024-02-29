@@ -1,4 +1,4 @@
-import CounterContainer from "../common/counter/CounterContainer";
+import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetail.css";
 
 export const ItemDetail = ({
