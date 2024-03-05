@@ -26,6 +26,14 @@ export const Checkout = ({ envioDeFormulario, capturar }) => {
         <input
           className="checkoutData"
           type="text"
+          placeholder="Ingresa tu email"
+          onChange={capturar}
+          name="email"
+        />
+
+        <input
+          className="checkoutData"
+          type="text"
           placeholder="Ingresa tu provincia"
           onChange={capturar}
           name="province"

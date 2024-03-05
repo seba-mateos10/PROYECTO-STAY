@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getProducts } from "../../../productsMock";
 import { ItemList } from "../../common/ItemList";
 import { useParams } from "react-router-dom";
+import { Box, CircularProgress } from "@mui/material";
 
 export const ItemListContainer = () => {
   const { category } = useParams();
@@ -24,5 +25,23 @@ export const ItemListContainer = () => {
     });
   }, [category]);
 
-  return <>{isLoading ? <h2>Cargando...</h2> : <ItemList items={items} />}</>;
+  if (isLoading) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "15%",
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  return (
+    <>
+      <ItemList items={items} />
+    </>
+  );
 };

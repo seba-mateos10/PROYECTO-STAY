@@ -5,6 +5,7 @@ export const CheckoutContainer = () => {
   const [userInfo, setUserInfo] = useState({
     name: "",
     lastName: "",
+    email: "",
     phone: "",
     province: "",
     direction: "",

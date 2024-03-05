@@ -1,14 +1,19 @@
 import { useState } from "react";
 import Counter from "./Counter";
+import Swal from "sweetalert2";
 
-const CounterContainer = ({ stock, onAdd }) => {
-  const [quantity, setQuantity] = useState(1);
+const CounterContainer = ({ stock, onAdd, initial = 1 }) => {
+  const [quantity, setQuantity] = useState(initial);
 
   const sumar = () => {
     if (quantity < stock) {
       setQuantity(quantity + 1);
     } else {
-      alert("stock maximo");
+      Swal.fire({
+        icon: "error",
+        title: "Stock Maximo",
+        text: "No hay mas unidades en stock",
+      });
     }
   };
 

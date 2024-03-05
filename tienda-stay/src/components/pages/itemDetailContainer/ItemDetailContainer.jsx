@@ -3,6 +3,7 @@ import { ItemDetail } from "../itemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { getProductById } from "../../../productsMock";
 import { CartContext } from "../../../context/CartContext";
+import { CardSkeletonDetail } from "../../common/CardSkeletonDetail";
 
 export const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -11,7 +12,8 @@ export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, totalQuantity } = useContext(CartContext);
+  const initial = totalQuantity(id);
 
   useEffect(() => {
     getProductById(id).then((resp) => {
@@ -28,13 +30,17 @@ export const ItemDetailContainer = () => {
     addToCart(infoProducto);
   };
 
+  if (isLoading) {
+    return (
+      <div style={{ display: "flex" }}>
+        <CardSkeletonDetail />
+      </div>
+    );
+  }
+
   return (
     <>
-      {isLoading ? (
-        <h2>Cargando...</h2>
-      ) : (
-        <ItemDetail {...item} onAdd={onAdd} />
-      )}
+      <ItemDetail {...item} onAdd={onAdd} initial={initial} />
     </>
   );
 };

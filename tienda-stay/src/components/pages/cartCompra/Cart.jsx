@@ -3,9 +3,29 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import "./Cart.css";
 import { Button } from "@mui/material";
+import Swal from "sweetalert2";
 
 export const Cart = () => {
-  const { cart, clearCart, removeProduct } = useContext(CartContext);
+  const { cart, clearCart, removeProduct, totalPrice } =
+    useContext(CartContext);
+  let total = totalPrice();
+
+  const alertClearCart = () => {
+    Swal.fire({
+      title: "Seguro que quieres limpiar el carrito?",
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Si",
+      denyButtonText: `No`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire("Se ha limpiado el carrito!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Se ha salvado el carrito", "", "info");
+      }
+    });
+  };
 
   return (
     <div className="cartContainer">
@@ -24,7 +44,9 @@ export const Cart = () => {
         </div>
       ))}
 
-      <button className="buttonClearCart" onClick={clearCart}>
+      <h2>El total a pagar es: {total} </h2>
+
+      <button className="buttonClearCart" onClick={alertClearCart}>
         Limpiar carrito
       </button>
 
