@@ -11,3 +11,17 @@ form {
   margin: 4px;
   border-color: black;
 }
+
+.completedPurchase {
+  margin: 15%;
+}
+
+.codeTracking {
+  display: flex;
+  justify-content: center;
+}
+
+.linkHome {
+  display: flex;
+  justify-content: center;
+}
