@@ -1,6 +1,7 @@
 import { Brand } from "../brand/Brand";
 import { CartWidget } from "../../common/cart/CartWidget";
 import { Link } from "react-router-dom";
+import { menuNavigation } from "../../../router/menuNavigation";
 
 export const NavBar = () => {
   return (
@@ -12,18 +13,11 @@ export const NavBar = () => {
 
         <nav className="containerMenuList">
           <ul>
-            <Link to="/">
-              <li className="">Home</li>
-            </Link>
-            <Link to="/category/remeras">
-              <li className="">Remeras</li>
-            </Link>
-            <Link to="/category/abrigos">
-              <li className="">Abrigos</li>
-            </Link>
-            <Link to="/category/zapatillas">
-              <li className="">Zapatillas</li>
-            </Link>
+            {menuNavigation.map(({ id, text, path }) => (
+              <Link className="categories" key={id} to={path}>
+                {text}
+              </Link>
+            ))}
           </ul>
         </nav>
 

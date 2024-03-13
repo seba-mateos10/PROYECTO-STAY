@@ -32,17 +32,18 @@ header .containerMenuList {
   background-color: rgb(197, 197, 197);
 }
 
-header .containerMenuList ul {
+header .containerMenuList {
   list-style: none;
   display: flex;
   margin: 0;
   justify-content: flex-end;
 }
 
-header .containerMenuList ul li {
+header .containerMenuList .categories {
   margin: 10px;
   padding: 5px;
   color: var(--color-txt-nav);
+  text-decoration: none;
 }
 
 /* containerCart */
