@@ -2,7 +2,7 @@
 
 ## Tienda online de ropa
 
-![](/tienda-stay/public/favicon.ico)
+![](/public/favicon.ico)
 
 ### Para hacer funcionar el sitio web
 
